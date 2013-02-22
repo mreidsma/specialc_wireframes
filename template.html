@@ -13,6 +13,27 @@
 		body { background-color: #ddd; }
 		#page { width: 970px; margin: 0 auto; background-color: #fff; border-left: 1px solid #bbb; border-right: 1px solid #bbb; padding: 0 14px; }
 
+		#nav {
+			width: 100%;
+			float: left;
+			margin: 0 0 3em 0;
+			padding: 0;
+			list-style: none;
+			background-color: #f2f2f2;
+			border-bottom: 1px solid #ccc; 
+			border-top: 1px solid #ccc; }
+		#nav li {
+			float: left; }
+		#nav li a {
+			display: block;
+			padding: 8px 15px;
+			text-decoration: none;
+			font-weight: bold;
+			color: #069;
+			border-right: 1px solid #ccc; }
+		#nav li a:hover {
+			color: #c00;
+			background-color: #fff; }
 
 	</style>
 
@@ -28,26 +49,26 @@
 			</div>
 
 			<div class="span2 unit right lastUnit">
-				<h1><a href="http://gvsu.edu/library">University Libraries</a></h1>
+				<h1 style="font-size: 30px;"><a href="http://gvsu.edu/library">University Libraries</a></h1>
 			</div>
 		</div>
 
 		<div class="line">
 			<div class="span1 unit">
-				<h2<a href="#">Special Collections &amp; University Archives</a></h2>
+				<h2 style="font-size: 30px;"<a href="#">Special Collections &amp; University Archives</a></h2>
 			</div>
 		</div>
 
 		<div class="line">
-				<div class="span2 unit left lib-horizontal-list">
-					<ul>
-						<li><a href="#">Collections</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">Exhibits</a></li>
+				<div class="span2 unit left nav">
+					<ul style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 14px; padding-top: 14px; border-top: 1px solid #ccc; display: block; background-color: #f2f2f2;">
+						<li style="width: 32%; display: inline-block;"><a href="#">Collections</a></li>
+						<li style="width: 32%; display: inline-block;"><a href="#">Services</a></li>
+						<li style="width: 32%; display: inline-block;"><a href="#">Exhibits</a></li>
 					</ul>
 				</div>
-			<div class="span2 unit left">
-				<input id="search-text" type="text" maxlength="100" size="65" name="q" placeholder="Find articles, books, &amp; more">
+			<div class="span2 unit left" style="text-align: center;">
+				<input style="padding-top: 7px; padding-bottom: 7px;" id="search-text" type="text" size="86%" name="q" placeholder="Find articles, books, &amp; more">
 			</div>
 		</div>
 
@@ -66,14 +87,14 @@
 
 		<div class="line" style="margin-bottom: 2em;">
 			<div class="span3 unit left">
-				<img src="http://placehold.it/300x240">
+				<img src="http://placehold.it/300x200">
 				<h4>Exhibits</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 				<a href="#" class="">View More</a>
 			</div>
 
 			<div class="span3 unit left">
-				<img src="http://placehold.it/300x240">
+				<img src="http://placehold.it/300x200">
 				<h4>New Acquisitions</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 								<a href="#" class="">View More</a>
@@ -81,7 +102,7 @@
 			</div>
 
 			<div class="span3 unit left">
-				<img src="http://placehold.it/300x240">
+				<img src="http://placehold.it/300x200">
 				<h4>GVSU History</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 								<a href="#" class="">View More</a>
