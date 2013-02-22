@@ -234,6 +234,8 @@ form.lib-simple-form input[type="submit"] {
 
 .accordion-head{margin:1.5em 0;}
 
+.footer { padding-top: 1em; border-top: 1px solid #bbb;}
+
 /* Media Queries */
 
 @media screen and (min-width: 40.625em) { 
