@@ -25,6 +25,12 @@
 		.nav li a:hover {
 			color: #c00;
 			background-color: #ddd; }
+		.fixed {
+  			position: fixed;
+   			top: 0;
+   			background: #fff;
+   			border-bottom: 1px solid #ddd;
+  		}
 
 	</style>
 
@@ -80,7 +86,7 @@
 
 
 
-		<div class="line">
+		<div class="line sticky">
 			<div class="span1 unit left" style="text-align: center;">
 				<input style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; font-size: 24px;" id="search-text" type="text" size="82%" name="q" placeholder="Search our collections" />
 			</div>
@@ -227,6 +233,17 @@
 
 
 	</div><!-- End #page -->
+<script>
+var sticky = document.querySelector('.sticky');
+var origOffsetY = sticky.offsetTop;
+
+function onScroll(e) {
+  window.scrollY >= origOffsetY ? sticky.classList.add('fixed') :
+                                  sticky.classList.remove('fixed');
+}
+
+document.addEventListener('scroll', onScroll);
+</script>
 
 </body>
 </html>
