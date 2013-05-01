@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<style>
-		body { background-color: #ddd; }
-		#page { width: 970px; margin: 0 auto; background-color: #fff; border-left: 1px solid #bbb; border-right: 1px solid #bbb; padding: 0 14px; }
+		body { background-color: #fff; }
+		#page { width: 970px; margin: 0 auto; background-color: #fff; border-left: 0px solid #bbb; border-right: 0px solid #bbb; padding: 0 14px; }
 
 		.nav li {
 			float: left; }
@@ -24,7 +24,13 @@
 			border-right: 1px solid #ccc; }
 		.nav li a:hover {
 			color: #c00;
-			background-color: #fff; }
+			background-color: #ddd; }
+		.fixed {
+  			position: fixed;
+   			top: 0;
+   			background: #fff;
+   			border-bottom: 1px solid #ddd;
+  		}
 
 	</style>
 
@@ -39,67 +45,92 @@
 				<a href="http://gvsu.edu"><img src="img/logo.jpg" alt="Grand Valley State University" /></a>
 			</div>
 
-			
-		</div>
+			<div style="#ccc; padding-bottom: 14px; padding-top: 14px; display: block;">
 
-		<div class="line">
-			<div class="span1 unit">
-				<h2 style="font-size: 30px;"><a href="index.html">Special Collections &amp; University Archives</a></h2>
-			</div>
-		</div>
-
-		<div class="line" style="border-bottom: 1px solid #ccc; padding-bottom: 14px; padding-top: 14px; border-top: 1px solid #ccc; display: block; background-color: #f2f2f2;">
-				<div class="span2 unit left nav">
+				<div class="span2 unit right nav">
 					<ul style="text-align: center;">
 						<li style="width: 32%; display: inline-block;"><a href="collections.html">Collections</a></li>
 						<li style="width: 32%; display: inline-block;"><a href="services.html">Services</a></li>
 						<li style="width: 32%; display: inline-block;"><a href="exhibits.html">Exhibits</a></li>
 					</ul>
 				</div>
-			<div class="span2 unit left" style="text-align: center;">
-				<input style="padding-top: 7px; padding-bottom: 7px;" id="search-text" type="text" size="86%" name="q" placeholder="Search our collections" />
 			</div>
 		</div>
-		<div style="margin-top: 2em;"></div>
+
 		<div class="line">
+			<div class="span1 unit">
+				<h2 style="font-size: 30px; text-align: left;"><a href="index.html">Special Collections &amp; University Archives</a></h2>
+			</div>
+		</div>
+
+		<div class="line" style="padding-top: 40px; padding-bottom: 40px; background-color: #ccc">
 			<div class="size2of3 unit left">
-				<img src="http://placehold.it/620x240">
+				
 			</div>
 			<div class="size1of3 unit left" style="padding-left: 14px;">
-				<h3 style="margin-top: 0;">Collection</h3>
+				<h3 style="margin-top: 0; background-color: #ccc">Collection</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				<span class="lib-button-small-grey">Digital Collection</span>
+				<span class="lib-button-small-grey"> <a href="single_collection.html"> Digital Collection</span> </a>
 				<span class="lib-button-small-grey">Finding Aid</span>
-
 			</div>
 		</div>
-				<div style="margin-top: 2em;"></div>
 
 
-		<div class="line" style="margin-bottom: 2em;">
-			<div class="span3 unit left">
-				<img src="http://placehold.it/300x200">
-				<h4>New Exhibit</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				<a href="exhibit_detail.html" class="">Learn More</a>
-			</div>
+		<div style="margin-top: 14px;"></div>
 
-			<div class="span3 unit left">
-				<img src="http://placehold.it/300x200">
-				<h4>New Acquisitions</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-								<a href="acquisition.html" class="">Learn More</a>
 
-			</div>
 
-			<div class="span3 unit left">
-				<img src="http://placehold.it/300x200">
-				<h4>GVSU History</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-								<a href="gvsuhistory.html" class="">Learn More</a>
-
+		<div class="line sticky">
+			<div class="span1 unit left" style="text-align: center;">
+				<input style="padding-top: 14px; padding-bottom: 14px; padding-left: 14px; font-size: 24px;" id="search-text" type="text" size="82%" name="q" placeholder="Search our collections" />
 			</div>
 		</div>
+
+		<div class="line">
+			<div class="span2 unit left">
+				<h2>Special Collections</h2>
+				<div class="span1 unit left">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</div>
+			</div>
+			<div class="span2 unit left">
+				<h2>University Archives</h2>
+				<div class="span1 unit left">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+				</div>
+			</div>
+
+			<div class="span4 unit left">
+					<h4>New Acquisitions</h4>
+					<img src="http://placehold.it/220x140"></img>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					<a href="acquisition.html" class="">Learn More</a>
+			</div>
+
+			<div class="span4 unit left">
+					<h4>New Exhibit</h4>
+					<img src="http://placehold.it/220x140"></img>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					<a href="exhibit_detail.html" class="">Learn More</a>
+			</div>
+
+			<div class="span4 unit left">
+					<h4>GVSU History</h4>
+					<img src="http://placehold.it/220x140"></img>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					<a href="gvsuhistory.html" class="">Learn More</a>
+			</div>
+
+			<div class="span4 unit left">
+					<h4>GVSU Publication</h4>
+					<img src="http://placehold.it/220x140"></img>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+					<a href="" class="">Learn More</a>
+			</div>
+
+		</div>
+
+		<div style="margin-top: 28px;"></div>
 
 		<div class="footer line">
 			<div class="span4 unit left">
@@ -142,10 +173,18 @@
 		</div>
 
 
-
-
-
 	</div><!-- End #page -->
+<script>
+var sticky = document.querySelector('.sticky');
+var origOffsetY = sticky.offsetTop;
+
+function onScroll(e) {
+  window.scrollY >= origOffsetY ? sticky.classList.add('fixed') :
+                                  sticky.classList.remove('fixed');
+}
+
+document.addEventListener('scroll', onScroll);
+</script>
 
 </body>
 </html>
