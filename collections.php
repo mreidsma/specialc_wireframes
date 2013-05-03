@@ -46,7 +46,7 @@
 			<div style="#ccc; padding-bottom: 14px; padding-top: 14px; display: block;">
 				<div class="span2 unit right nav">
 					<ul style="text-align: center;">
-						<li style="width: 32%; display: inline-block;"><a href="collections.html">Collections</a></li>
+						<li style="width: 32%; display: inline-block;"><a href="collections.php">Collections</a></li>
 						<li style="width: 32%; display: inline-block;"><a href="services.html">Services</a></li>
 						<li style="width: 32%; display: inline-block;"><a href="exhibits.html">Exhibits</a></li>
 					</ul>
@@ -68,8 +68,6 @@
 
 <?php
 
-function getContent () {
-
 	$contentDm = file_get_contents('https://server16015.contentdm.oclc.org/dmwebservices/index.php?q=dmGetCollectionList/json');
 	$goodies = json_decode($contentDm);
 	foreach($goodies as $value) {
@@ -90,20 +88,23 @@ function getContent () {
 		//info
 		//https://server16015.contentdm.oclc.org/dmwebservices/index.php?q=dmGetItemInfo/p15068coll11/pointer/format
 
-		echo
-		'<div class="span4 unit left">
-			<a href="single_collection.php?alias=' . $alias . '"><img src="http://placehold.it/300x200"></a>
-			<h4><a href="single_collection.php?alias=' . $alias . '">' . $name . '</a></h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>';
+		echo'
+
+		<div class="line">
+			<div class="span3 unit left">
+				<a href="single_collection.php?alias=' . $alias . '"><img src="http://placehold.it/300x200"></a>
+			</div>
+
+			<div class="span2of3 unit left">
+				<h4><a href="single_collection.php?alias=' . $alias . '">' . $name . '</a></h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+		</div>
+
+		';
 	
 		// Echo html awesomeness
 	}
-
-
-}
-
-getContent();
 
 ?>
 

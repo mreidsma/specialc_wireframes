@@ -24,7 +24,6 @@
 		.nav li a:hover {
 			color: #c00;
 			background-color: #fff; }
-
 	</style>
 
 </head>
@@ -40,7 +39,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<style>
-
 		body { background-color: #fff; }
 		#page { width: 970px; margin: 0 auto; background-color: #fff; border-left: 0px solid #bbb; border-right: 0px solid #bbb; padding: 0 14px; }
 
@@ -62,7 +60,6 @@
    			background: #fff;
    			border-bottom: 1px solid #ddd;
   		}
-
 	</style>
 
 </head>
@@ -71,15 +68,14 @@
 
 	<div id="page">
 		<div class="line">
-
-			<div class="span4 unit left">
+			<div class="span4 unit left">3
 				<a href="http://gvsu.edu"><img src="img/logo.jpg" alt="Grand Valley State University" /></a>
 			</div>
 
 			<div style="#ccc; padding-bottom: 14px; padding-top: 14px; display: block;">
 				<div class="span2 unit right nav">
 					<ul style="text-align: center;">
-						<li style="width: 32%; display: inline-block;"><a href="collections.html">Collections</a></li>
+						<li style="width: 32%; display: inline-block;"><a href="collections.php">Collections</a></li>
 						<li style="width: 32%; display: inline-block;"><a href="services.html">Services</a></li>
 						<li style="width: 32%; display: inline-block;"><a href="exhibits.html">Exhibits</a></li>
 					</ul>
@@ -100,66 +96,50 @@
 		</div>
 
 
-
 		<?php
 
-			
 			$alias = $_GET["alias"];
-			echo "<p>Alias: " . $_GET["alias"] . "</p>";
+			//echo "<p>Alias: " . $_GET["alias"] . "</p>";
 
-			$api = file_get_contents('https://server16015.contentdm.oclc.org/dmwebservices/index.php?q=dmQuery/' . $alias . '/^^all^and/title!subjec/title/50/1/0/0/0/0/0/0/json');
-			$results = json_decode($api);
-			echo $api;
+			$contentDmParam = file_get_contents('https://server16015.contentdm.oclc.org/dmwebservices/index.php?q=dmGetCollectionParameters/' . $alias . '/json');
+			$paramResults = json_decode($contentDmParam);
 
-			
-			foreach($results as $value) {
-				foreach($value as $key => $value) {
-
-					echo $key . ' : ' . $value . '<br />';
-
-					/*
-					if($key == 'alias') {
-						$alias = substr($value, 1);
-						//echo $key . ' : ' . $alias . '<br />';
-					}
-					else if($key == 'name') {
-				 		$name = $value;
-					}
-					else if($key == 'path') {
-				 		$path = $value;
-					}*/
-					
+			foreach($paramResults as $key => $value) {
+				if ($key == 'name') {
+					$name = $value;
+					echo '<h3>' . $name . '</h3> <br/>';
 				}
 			}
+
+
+			$contentDmQuery = file_get_contents('https://server16015.contentdm.oclc.org/dmwebservices/index.php?q=dmQuery/' . $alias . '/^^all^and/title!subjec/title/50/1/0/0/0/0/0/0/json');
+			$queryResults = json_decode($contentDmQuery);
+
+			foreach($queryResults as $key=>$value) {
+				if ($key == 'records') {
+					foreach($value as $v) {
+						if (is_object($v)) {
+							$v = get_object_vars($v);
+							
+							echo '
+
+								<div class="span3 unit left">
+
+								<img src="http://cdm16015.contentdm.oclc.org/utils/getthumbnail/collection/' . $alias . '/id/' . $v['pointer'] . '.jp2">  
+
+								<h4>' . $v['title'] . '</h4>
+
+								</div>
+
+								';
+						}
+					}
+				}
+			}
+
 		?>
 
-
-		
-		<div class="line" style="padding: 1.5em; border-bottom: 1px solid #bbb;">
-			<div class="span4 unit left">
-				<img src="http://placehold.it/300x200">
-			</div>
-			<div class="span2 unit left">
-				<h4 style="margin-top:0;"><a href="#">Abraham Lincoln Collection</a></h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-			</div>
-			<div class="span4 unit left lastUnit">
-				<p style="text-align:right;margin-top:2em;"><a href="#" class="lib-button-small-grey" style="width:70%; text-align:center;">Finding Aid</a></p>
-			</div>
-		</div>
-
-		<div class="line" style="padding: 1.5em; border-bottom: 1px solid #bbb;">
-			<div class="span4 unit left">
-				<img src="http://placehold.it/300x200">
-			</div>
-			<div class="span2 unit left">
-				<h4 style="margin-top:0;"><a href="#">Civil War Patriotic Envelopes</a></h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-			</div>
-			<div class="span4 unit left lastUnit">
-				<p style="text-align:right;margin-top:2em;"><a href="#" class="lib-button-small-grey" style="width:70%;text-align:center;">Digital Collection</a><br /><a href="#" class="lib-button-small-grey" style="width:70%; text-align:center;">Finding Aid</a></p>
-			</div>
-		</div>
+		<!--
 
 		<div class="line" style="padding: 1.5em; border-bottom: 1px solid #bbb;">
 			<div class="span4 unit left">
@@ -173,6 +153,10 @@
 				<p style="text-align:right;margin-top:2em;"><a href="#" class="lib-button-small-grey" style="width:70%;text-align:center;">Digital Collection</a><br /><a href="#" class="lib-button-small-grey" style="width:70%; text-align:center;">Finding Aid</a></p>
 			</div>
 		</div>
+
+		-->
+
+		<div style="margin-top: 40px;"></div>
 
 
 		<div class="footer line">
